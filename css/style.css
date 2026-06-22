@@ -1,0 +1,203 @@
+:root {
+    --bg-color: #faf8f9;
+    --text-color: #333333;
+    --accent-color: #ff6584;
+    --border-color: #f3d6e4;
+    --card-bg: rgba(255, 255, 255, 0.85); /* 背景のパーティクルが透けるように調整 */
+    --hover-shadow: rgba(255, 101, 132, 0.25);
+    --btn-github: #2c3e50;
+    --btn-github-hover: #1a252f;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Nunito", "M PLUS Rounded 1c", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* パーティクルの背景用 */
+#particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+h1 {
+    color: #2c3e50;
+    font-size: 3rem;
+    margin-bottom: 10px;
+    display: inline-block;
+    border-right: 3px solid var(--accent-color);
+    padding-right: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.subtitle {
+    color: #555;
+    font-size: 1.2rem;
+    margin-top: 15px;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards 1.5s; /* タイピングエフェクト完了後にフェードイン */
+}
+
+.bot-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, border-color 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 30px var(--hover-shadow);
+    border-color: var(--accent-color);
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.card:hover .card-icon {
+    transform: scale(1.2) rotate(5deg);
+}
+
+.card h2 {
+    color: var(--accent-color);
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    text-align: center;
+    border-bottom: 2px dashed var(--border-color);
+    padding-bottom: 10px;
+}
+
+.card p {
+    flex-grow: 1;
+    margin-bottom: 25px;
+    color: #444;
+}
+
+.card-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-github {
+    background-color: var(--btn-github);
+    color: white;
+}
+
+.btn-github:hover {
+    background-color: var(--btn-github-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(44, 62, 80, 0.3);
+}
+
+.btn-invite {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.btn-invite:hover {
+    background-color: #e65574;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px var(--hover-shadow);
+}
+
+footer {
+    text-align: center;
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+    color: #888;
+}
+
+/* Animations */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+}
+
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* スマホ対応 */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+    .card-actions {
+        flex-direction: column;
+    }
+    .btn {
+        justify-content: center;
+    }
+}
