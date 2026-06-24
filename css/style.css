@@ -7,6 +7,10 @@
     --hover-shadow: rgba(255, 101, 132, 0.25);
     --btn-github: #2c3e50;
     --btn-github-hover: #1a252f;
+    --btn-portfolio: #8e44ad;
+    --btn-portfolio-hover: #732d91;
+    --btn-back: #7f8c8d;
+    --btn-back-hover: #606b6c;
 }
 
 * {
@@ -157,6 +161,33 @@ h1 {
     background-color: #e65574;
     transform: translateY(-2px);
     box-shadow: 0 5px 15px var(--hover-shadow);
+}
+
+.btn-portfolio {
+    background-color: var(--btn-portfolio);
+    color: white;
+}
+
+.btn-portfolio:hover {
+    background-color: var(--btn-portfolio-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(142, 68, 173, 0.3);
+}
+
+.btn-back {
+    background-color: var(--btn-back);
+    color: white;
+}
+
+.btn-back:hover {
+    background-color: var(--btn-back-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(127, 140, 141, 0.3);
+}
+
+.bot-detail {
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 footer {
