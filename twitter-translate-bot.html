@@ -23,13 +23,25 @@
             <div class="card bot-detail fade-in-up">
                 <div class="card-icon"><i class="fa-solid fa-language"></i></div>
                 <h2>機能紹介</h2>
-                <p>Twitter（X）のツイートを自動で翻訳するBotです。多言語コミュニティでのコミュニケーションをサポートします。</p>
+                <p>Discordに投稿されたTwitter/Xのリンクを検出し、投稿本文を翻訳して返信するBOTです。</p>
+                <p>翻訳返信には言語切り替えボタンが付き、日本語・英語・中国語・韓国語へその場で切り替えられます。デフォルト言語以外の投稿だけを自動で翻訳する機能も搭載しています。</p>
+                
+                <h3 style="margin-top: 20px; color: var(--accent-color); border-bottom: 1px dashed var(--border-color); padding-bottom: 5px;">主なコマンド</h3>
+                <ul style="list-style: inside; margin-bottom: 20px; color: #444; text-align: left; padding: 10px;">
+                    <li><code>/translate_tweet</code> - 指定した投稿を指定言語へ手動で翻訳</li>
+                    <li><code>/set_default_lang</code> - 自動翻訳のデフォルト言語を変更</li>
+                    <li><code>/set_ui_lang</code> - BOTの応答メッセージの言語を変更</li>
+                    <li><code>/tweet_test</code> - Twitter/Xリンクの検出、取得、翻訳可否を確認</li>
+                </ul>
                 <div class="card-actions" style="margin-top: 30px;">
                     <a href="https://discord.com/oauth2/authorize?client_id=1511184727808151784" target="_blank" class="btn btn-invite">
                         <i class="fa-solid fa-robot"></i> 導入する
                     </a>
+                    <a href="https://github.com/featlis/TwitterTranslateBOTforDiscord" target="_blank" class="btn btn-github">
+                        <i class="fa-brands fa-github"></i> GitHub
+                    </a>
                     <a href="index.html" class="btn btn-back">
-                        <i class="fa-solid fa-arrow-left"></i> Bot一覧に戻る
+                        <i class="fa-solid fa-arrow-left"></i> 戻る
                     </a>
                 </div>
             </div>

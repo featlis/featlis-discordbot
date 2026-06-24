@@ -11,6 +11,8 @@
     --btn-portfolio-hover: #732d91;
     --btn-back: #7f8c8d;
     --btn-back-hover: #606b6c;
+    --btn-detail: #3498db;
+    --btn-detail-hover: #2980b9;
 }
 
 * {
@@ -183,6 +185,17 @@ h1 {
     background-color: var(--btn-back-hover);
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(127, 140, 141, 0.3);
+}
+
+.btn-detail {
+    background-color: var(--btn-detail);
+    color: white;
+}
+
+.btn-detail:hover {
+    background-color: var(--btn-detail-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
 }
 
 .bot-detail {
